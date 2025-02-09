@@ -1,0 +1,78 @@
+/* src/components/contact.css */
+
+.contact-section {
+    padding: 40px;
+    background-color: rgba(7, 7, 7, 1);
+    
+  }
+    
+    .contact-container {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 2rem;
+      padding: 30px;
+      background-color: #171717cd;  /* White background for the card */
+      border-radius: 15px;  /* Rounded corners */
+      box-shadow: 0 4px 15px rgb(0, 0, 0);  /* Subtle shadow to create card effect */
+      transition: box-shadow 0.3s ease-in-out;  /* Smooth transition on hover */
+    }
+    
+    .contact-container:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);  /* Shadow on hover */
+    }
+    
+    /* Left column: text content */
+    .contact-content {
+      flex: 1.5;
+      padding: 10px 30px 10px 60px;
+    }
+    
+    .contact-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color:rgb(255, 255, 255);
+      text-align: center;
+    }
+    .contact-content .inputs input[type='text'],  input[type='email'], textarea, .button1{
+        background-color: transparent;
+        margin: 10px;
+        width: 330px;
+        height:50px;
+        color:#6c6b6b;
+        padding-left: 10px;
+        border-radius: 8px;
+        border-color:  #3e5587;
+    }
+    .contact-content .inputs textarea{
+        height:200px;
+        margin: 10px;
+    }
+    .contact-content .inputs .button1{
+        background-color:  #3e5587;
+        color:black;
+        margin: 10px;
+        font-weight:700 ;
+        border-radius: 8px;
+        border: none !important;
+    }
+    .contact-content .inputs .button1:hover{
+        background-color: rgb(255, 255, 255);
+    }
+  .status-message{
+    text-align: center;
+  }
+    /* Responsive layout for mobile */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        padding: 20px;  /* Add some padding for smaller screens */
+      }
+    
+      .contact-content h2 {
+        font-size: 2rem;
+      }
+    }
+    

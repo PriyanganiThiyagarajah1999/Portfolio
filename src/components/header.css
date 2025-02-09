@@ -1,0 +1,113 @@
+/* General header styling */
+.header {
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    color: white;
+    z-index: 1000;
+    background-color: #000000; 
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.215); 
+    transition: box-shadow 0.3s ease-in-out; 
+  }
+  
+  .header-title {
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .nav-list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-item {
+    margin: 0 1rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    font-size: 24px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Mobile Side Navigation */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 2000;
+  }
+  
+  .mobile-nav.open {
+    left: 0; /* Slide in */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Mobile navigation list styling */
+  .mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-nav-item {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none; /* Hide desktop nav on mobile */
+    }
+    .menu-button {
+      display: block; /* Show hamburger menu on mobile */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .mobile-nav {
+      display: none; /* Hide mobile nav on desktop */
+    }
+  }
+  
