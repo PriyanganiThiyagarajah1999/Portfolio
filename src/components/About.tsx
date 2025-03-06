@@ -15,13 +15,14 @@ const About= () => {
             <div className="about-content">
             <h2>About Me</h2>
                 <p>
-                Hello! I'm Priyangani Thiyagarajah, a passionate Software Engineer with experience in web development and a strong foundation in 
-                Angular, React, and modern front-end technologies. I enjoy building scalable and user-friendly applications 
-                that enhance user experiences.
+                Hello! I'm Priyangani Thiyagarajah, a passionate Software Engineer specializing in web development. With expertise in Angular, 
+                React, and modern front-end technologies, I thrive on building scalable, high-performance applications that enhance user 
+                experiences.
                 </p>
                 <p>
-                I specialize in crafting responsive, high-performance web applications. I focus on writing clean code, optimizing performance, 
-                and designing seamless UI/UX to deliver top-quality products.
+                I focus on writing clean, efficient code, optimizing performance, and crafting seamless UI/UX designs to deliver 
+                top-quality products. Whether developing responsive web applications or refining user interactions, 
+                I’m dedicated to creating intuitive and impactful digital experiences.
                 </p>
             </div>
 
