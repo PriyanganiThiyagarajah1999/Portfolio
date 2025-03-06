@@ -1,46 +1,102 @@
-.project-section{
-    margin-top: 100px;
+/* src/components/Project.css */
+
+.project-section {
+  margin-top: 80px;
+  padding: 20px;
 }
+
+.project-container {
+  text-align: center;
+  color: #000000;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgb(0, 0, 0);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.project-container h2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .project-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px 0px;
-  }
-  .project-container {
-    text-align: center;
-    color: #000000;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
-    padding: 30px;
-    background-color: rgba(255, 255, 255); 
-    border-radius: 15px; 
-    box-shadow: 0 4px 15px rgb(0, 0, 0); 
-    transition: box-shadow 0.3s ease-in-out;  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px 25px;
+}
+
+.card1 {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.9);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card1 h5 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card1 p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-section {
+    margin-top: 60px;
+    padding: 15px;
   }
 
-  h2{
-    font-weight: bold;
+  .project-container {
+    padding: 20px;
+  }
+
+  .project-container h2 {
+    font-size: 20px;
+  }
+
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card1 {
+    padding: 15px;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .card1 h5 {
     font-size: 16px;
   }
-  .card1 {
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+
+  .card1 p {
+    font-size: 13px;
   }
-  
-  .card1:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
+}

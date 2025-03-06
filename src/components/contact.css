@@ -1,7 +1,7 @@
 /* src/components/contact.css */
 
 .contact-section {
-    padding: 40px;
+    padding: 40px 0px;
     background-color: rgba(7, 7, 7, 1);
     
   }
@@ -73,6 +73,10 @@
     
       .contact-content h2 {
         font-size: 2rem;
+      }
+      .contact-content {
+        flex: 1.5;
+        padding: 10px 30px 10px 30px;
       }
     }
     
