@@ -3,7 +3,7 @@
 import React from 'react';
 import './about.css';
 import prof from '../assets/prof2.png';
-
+import resume from "../assets/resume.pdf"
 const About: React.FC = () => {
   return (
     <div className="about-container">
@@ -25,7 +25,7 @@ const About: React.FC = () => {
           <a href="https://www.linkedin.com/in/priyangani-thiyagarajah-b8731738b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/PriyanganiThiyagarajah1999" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a 
-            href="src/assets/resume.pdf" // Path starts with / to signify the root of the site
+            href={resume}// Path starts with / to signify the root of the site
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn btn-secondary"
