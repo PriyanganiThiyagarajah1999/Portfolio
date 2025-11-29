@@ -2,6 +2,7 @@
 
 import React from 'react';
 import './about.css';
+import prof from '../assets/prof2.png';
 
 const About: React.FC = () => {
   return (
@@ -35,7 +36,7 @@ const About: React.FC = () => {
       </div>
       <div className="about-photo">
         {/* Placeholder for a professional image */}
-        <img src="src/assets/prof2.png" alt="Your professional portrait" />
+        <img src={prof} alt="Your professional portrait" />
       </div>
     </div>
   );
