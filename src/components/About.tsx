@@ -1,42 +1,44 @@
-import React from 'react'
-import Header from '../components/Header'
-import './about.css'
-import profileImg from "../assets/profile.png";
-import Project from './Project';
-import Skills from './Skills';
-import Contact from './Contact';
-import Footer from './Footer';
+// src/components/About.tsx
 
-const About= () => {
-    return (
-        <section id="about" className="about-section">
-            <div className="about-container">
-            {/* Left Side: About Text */}
-            <div className="about-content">
-            <h2>About Me</h2>
-                <p>
-                Hello! I'm Priyangani Thiyagarajah, a passionate Software Engineer specializing in web development. With expertise in Angular, 
-                React, and modern front-end technologies, I thrive on building scalable, high-performance applications that enhance user 
-                experiences.
-                </p>
-                <p>
-                I focus on writing clean, efficient code, optimizing performance, and crafting seamless UI/UX designs to deliver 
-                top-quality products. Whether developing responsive web applications or refining user interactions, 
-                I’m dedicated to creating intuitive and impactful digital experiences.
-                </p>
-            </div>
+import React from 'react';
+import './about.css';
 
-            {/* Right Side: Profile Image */}
-            <div className="about-image">
-                <img src={profileImg} alt="Profile" />
-            </div>
-            </div>
-            <Project />
-            <Skills />
-            <Contact />
-            <Footer />
-        </section>
-    )
-}
+const About: React.FC = () => {
+  return (
+    <div className="about-container">
+      <div className="about-bio">
+        <h2 className="about-greeting">Hello, I'm <b>Priyangani </b></h2>
+        <p className="about-headline">
+          A <strong>Full-Stack Software Engineer</strong> specializing in scalable, high-performance web applications.
+        </p>
+
+        {/* --- CONSOLIDATED BIO CONTENT --- */}
+        <p>
+          With deep expertise in <strong>Angular</strong> and <strong>React</strong> on the front end, my full-stack capabilities extend to building robust APIs using <strong>MEAN (Node.js/Express)</strong> and enterprise-level services with <strong>Spring Boot</strong>. I thrive on tackling application logic across both client and server environments.
+        </p>
+        <p>
+          My focus is on delivering top-quality products by writing clean, efficient code, optimizing performance, and crafting seamless <strong>UI/UX designs</strong>. I am dedicated to creating intuitive and impactful digital experiences and actively seek roles where my dedication to clean architecture can deliver measurable results.
+        </p>
+        <div className="social-links">
+          {/* Use icons here (e.g., from FontAwesome or Lucide) */}
+          <a href="https://www.linkedin.com/in/priyangani-thiyagarajah-b8731738b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/PriyanganiThiyagarajah1999" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a 
+            href="src/assets/resume.pdf" // Path starts with / to signify the root of the site
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-secondary"
+          >
+            Download CV
+          </a>
+        </div>
+      </div>
+      <div className="about-photo">
+        {/* Placeholder for a professional image */}
+        <img src="src/assets/prof2.png" alt="Your professional portrait" />
+      </div>
+    </div>
+  );
+};
 
 export default About;

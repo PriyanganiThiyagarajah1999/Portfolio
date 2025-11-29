@@ -1,102 +1,136 @@
-/* src/components/Project.css */
-
-.project-section {
-  margin-top: 80px;
-  padding: 20px;
+/* components/project.css */
+.section-title{
+  margin-bottom: 2% !important;
 }
 
-.project-container {
-  text-align: center;
-  color: #000000;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgb(0, 0, 0);
-  transition: box-shadow 0.3s ease-in-out;
+.projects-section {
+    padding: 60px 0;
+    background-color: var(--color-background-secondary); /* A subtle contrast color */
 }
 
-.project-container h2 {
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Large gap for clear separation between projects */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.project-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 20px 25px;
+/* Individual Project Card Styling */
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Reverse layout for alternating projects for visual interest */
 }
 
-.card1 {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
-  text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.project-card:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.card1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.9);
+.project-image-wrapper {
+    flex: 1.2; /* Image takes slightly more space */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle elevation */
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.card-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.card1 h5 {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 18px;
+.project-image:hover {
+    transform: scale(1.02); /* Gentle zoom on hover for visual elegance */
 }
 
-.card1 p {
-  font-size: 14px;
-  line-height: 1.4;
-  color: #333;
+.project-details {
+    flex: 1;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .project-section {
-    margin-top: 60px;
-    padding: 15px;
-  }
+.project-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
 
-  .project-container {
-    padding: 20px;
-  }
+.project-summary {
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+}
 
-  .project-container h2 {
-    font-size: 20px;
-  }
+.project-description {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text-light);
+}
 
-  .project-content {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
+/* Tech Stack Styling (Tags) */
+.tech-stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
 
-  .card1 {
-    padding: 15px;
-  }
+.tech-tag {
+    background-color: var(--color-accent-subtle); 
+    color: var(--color-accent); 
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
 
-  .card-image {
-    height: 160px;
-  }
+/* Buttons (Reusable styles needed in App.css) */
+.project-links {
+    display: flex;
+    gap: 20px;
+}
 
-  .card1 h5 {
-    font-size: 16px;
-  }
+.btn {
+    padding: 10px 20px;
+    border: 2px solid;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
 
-  .card1 p {
-    font-size: 13px;
-  }
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-dark);
+    border-color: var(--color-text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+}
+
+/* --- Media Queries for Professional Responsiveness --- */
+@media (max-width: 900px) {
+    .project-card {
+        flex-direction: column !important; /* Stack columns on smaller screens */
+    }
+
+    .project-image-wrapper {
+        width: 100%;
+    }
 }

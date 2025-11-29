@@ -1,91 +1,73 @@
-/* src/components/About.css */
+/* src/components/about.css */
 
 .about-section {
-  padding: 80px 20px 0px 20px;
-  background-color: rgba(7, 7, 7, 1);
+    background-color: var(--color-accent-subtle); /* Light background for the hero section */
 }
 
 .about-container {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-  padding: 30px;
-  background-color: #171717cd;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgb(0, 0, 0);
-  transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    min-height: 500px;
+    padding: 40px 0;
 }
 
-.about-container:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.about-bio {
+    flex: 2;
 }
 
-/* Left column: text content */
-.about-content {
-  flex: 1.5;
-  padding: 20px;
+.about-greeting {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-primary);
 }
 
-.about-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #3e5587;
+.about-headline {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: var(--color-accent);
+    margin-bottom: 30px;
 }
 
-.about-content p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  color: #fff;
-  text-align: justify;
+.about-bio p {
+    margin-bottom: 15px;
+    max-width: 650px;
 }
 
-/* Right column: image */
-.about-image {
-  flex: 1;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 10px;
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
 }
 
-.about-image img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
+.about-photo {
+    flex: 1;
+    text-align: left;
 }
 
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
+.about-photo img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-white);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
-  .about-content {
-    padding: 10px;
-  }
+/* Replicate button styles from project.css or App.css here */
+/* ... (Ensure .btn, .btn-secondary styles are accessible or duplicated) */
 
-  .about-content h2 {
-    font-size: 2rem;
-  }
-
-  .about-content p {
-    font-size: 1rem;
-  }
-
-  .about-image {
-    top: 0;
-    padding: 0;
-  }
-
-  .about-image img {
-    width: 80%;
-    max-width: 200px;
-  }
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-photo {
+        text-align: center;
+        order: -1; /* Move photo above text on mobile */
+    }
+    .social-links {
+        justify-content: center;
+    }
 }

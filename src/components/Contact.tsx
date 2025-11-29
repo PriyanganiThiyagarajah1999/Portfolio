@@ -1,87 +1,53 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import './contact.css'
+import React from 'react';
+import './contact.css';
 
-const ContactUs: React.FC = () => {
-  const formRef = useRef<HTMLFormElement | null>(null);
-  const [status, setStatus] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+const Contact: React.FC = () => {
+    // 1. Get your unique Formspree endpoint URL and place it here
+    const formspreeEndpoint = "https://formspree.io/f/YOUR_UNIQUE_ID_HERE"; 
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    return (
+        <section id="contact" className="contact-section">
+            <div className="contact-grid">
+                
+                <div className="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        Fill out the form below, and your message will be sent directly to my inbox.
+                    </p>
+                    {/* Other contact details remain here */}
+                    <p className="contact-detail">
+                        <strong>Email:</strong> <a href="mailto:thiyagarajahpriyangani@gmail.com">thiyagarajahpriyangani@gmail.com</a>
+                    </p>
+                    <p className="contact-detail">
+                        <strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/priyangani-thiyagarajah-b8731738b/" target="_blank" rel="noopener noreferrer">linkedin.com/in/priyangani-thiyagarajah</a>
+                    </p>
+                </div>
 
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!formRef.current) return;
-
-    try {
-      const response = await emailjs.sendForm(
-        'service_m9zndf3', 
-        'template_9zib3ye', 
-        formRef.current, 
-        { publicKey: 'iLwQuqZrCWJFll3iR' } // Replace with your actual public key
-      );
-
-      if (response.status === 200) {
-        setStatus('Message sent successfully! ✅');
-        setTimeout(() => {
-          setStatus(null);
-        }, 1000);
-        setFormData({ name: '', email: '', message: '' }); // Clear form
-        formRef.current.reset(); 
-      } else {
-        setStatus('Failed to send message. ❌');
-        setTimeout(() => {
-          setStatus(null);
-        }, 1000);
-      }
-    } catch (error) {
-      console.error('Email sending failed:', error);
-      setStatus('An error occurred. Please try again.');
-      setTimeout(() => {
-        setStatus(null);
-      }, 1000);
-    }
-  };
-
-  return (
-    <section id="contact" className="contact-section">
-      <div className="contact-container">
-        <div className="contact-content">
-          <h2>Get in Touch</h2>
-          <form ref={formRef} className="inputs" onSubmit={sendEmail}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-            <button type="submit" className='button1'>Send Message</button>
-          </form>
-          {status && <p className="status-message">{status}</p>}
-        </div>
-      </div>
-    </section>
-  );
+                {/* 2. Simple HTML form pointing to the endpoint */}
+                <form 
+                    className="contact-form" 
+                    method="POST" 
+                    action={formspreeEndpoint} // <-- THIS is the key change
+                >
+                    <div className="form-group">
+                        <label htmlFor="name">Name</label>
+                        {/* The 'name' attribute is critical for these services! */}
+                        <input type="text" id="name" name="name" required /> 
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="message">Message</label>
+                        <textarea id="message" name="message" rows={5} required></textarea>
+                    </div>
+                    {/* Formspree will handle the default browser submission */}
+                    <button type="submit" className="btn btn-primary btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    );
 };
 
-export default ContactUs;
+export default Contact;
